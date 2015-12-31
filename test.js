@@ -6,8 +6,8 @@ var assert = require('assert')
 function checkMatchingKeypair () {
   var payload = {title: 'Set fire to the rain', artist: 'Adele'}
   var keys = nacl.sign.keyPair()
-  var request = messaging.encryptRequest(payload, keys)
-  var decryptedPayload = messaging.decryptRequest(request, keys)
+  var request = messaging.encrypt(payload, keys.publicKey)
+  var decryptedPayload = messaging.decrypt(request, keys.publicKey)
   assert.deepEqual(decryptedPayload, payload)
 }
 
@@ -15,9 +15,9 @@ function checkMatchingKeypair () {
 function checkFailingKeypairs () {
   var payload = {title: 'Set fire to the rain', artist: 'Adele'}
   var keys = nacl.sign.keyPair()
-  var request = messaging.encryptRequest(payload, keys)
+  var request = messaging.encrypt(payload, keys.publicKey)
   keys = nacl.sign.keyPair()
-  var decryptedPayload = messaging.decryptRequest(request, keys)
+  var decryptedPayload = messaging.decrypt(request, keys.publicKey)
   assert.notDeepEqual(decryptedPayload, payload)
   assert.equal(decryptedPayload, false)
 }
