@@ -21,7 +21,7 @@ var messaging = require('secure-client-server-messaging')
 
 // Sign and encrypt the request payload with the given key pair
 var request = messaging.encryptRequest (payload, keyPair);
-// "request" is now an object {message: encryptedMessage, nonce: ranomNonce}
+// "request" is now an object {message: encryptedMessage, nonce: randomNonce}
 
 // Get the decrypted and signature verified payload of a request object
 var payload = messaging.decryptRequest (request, keyPair);
