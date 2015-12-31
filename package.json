@@ -1,0 +1,28 @@
+{
+  "name": "secure-client-server-messaging",
+  "version": "0.1.0",
+  "description": "Secure messaging between a client and a server using a shared secret",
+  "main": "index.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peermusic/secure-client-server-messaging.git"
+  },
+  "keywords": [
+    "secure",
+    "messaging",
+    "nacl",
+    "crypto"
+  ],
+  "author": "https://github.com/orgs/peermusic/",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/peermusic/secure-client-server-messaging/issues"
+  },
+  "homepage": "https://github.com/peermusic/secure-client-server-messaging#readme",
+  "dependencies": {
+    "tweetnacl": "^0.13.2"
+  }
+}
