@@ -24,5 +24,8 @@
   "homepage": "https://github.com/peermusic/secure-client-server-messaging#readme",
   "dependencies": {
     "tweetnacl": "^0.13.2"
+  },
+  "devDependencies": {
+    "standard": "^5.4.1"
   }
 }
